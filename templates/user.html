@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Select User</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='user.css') }}"> -->
+</head>
+<body>
+    <h1>Create a new User</h1>
+
+
+    <form id="new_user_form" action="{{ url_for('user')}}" method="post">
+        <fieldset>
+            <legend>New User</legend>
+        <label for="username">Username:</label><br>
+        <input id="new_user_field" type="text" id="username" name="username" required><br>
+        <button id="user_submit" type="submit" value="Select User">submit</button>
+     </fieldset>
+    </form>
+
+    {% if error %}
+    <p>{{ error }}</p>
+
+        <h4 id="already_signed_text"><a href="{{ url_for('users', user=user) }}">Already signed up?, click here </a></h4>
+{% endif %}
+
+
+
+</body>
+</html>
